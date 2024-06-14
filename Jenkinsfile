@@ -37,8 +37,9 @@ pipeline {
          stage ('API Test') {
             steps {
                 dir('api-test') {
-                git credentialsId: 'github-credencial', url: 'https://github.com/amiltonpazdev/tasks-apitest'
-                bat 'mvn test'
+                    git credentialsId: 'github-credencial', url: 'https://github.com/amiltonpazdev/tasks-apitest'
+                    bat 'mvn test'
+                }
             }
         }
     }
