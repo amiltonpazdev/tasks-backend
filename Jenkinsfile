@@ -42,5 +42,14 @@ pipeline {
                 }
             }
         }
+        stage ('Build Fontend') {
+             steps {
+                dir('frontend') {
+                    git credentialsId: 'github-credencial', url: 'https://github.com/amiltonpazdev/tasks-frontend'
+                    bat 'mvn clean package -DskipTests=true'
+                    deploy adapters: [tomcat8(credentialsId: 'tomcat-credencial', path: '', url: 'http://localhost:8001/')], contextPath: 'tasks', war: 'target/tasks.war'
+                }                
+            }
+        }
     }
 }
