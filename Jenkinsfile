@@ -6,5 +6,10 @@ pipeline {
                 bat 'mvn clean package -DskipTests=true'
             }
         }
+        stage ('Unit Tests') {
+            steps {
+                bat 'mvn test' // não usar o clean novamente para não apagar o binário gerado anteriormente
+            }
+        }
     }
 }
