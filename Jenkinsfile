@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Unit Tests') {
             steps {
-                bat 'mvn test' // não usar o clean novamente para não apagar o binário gerado anteriormente
+                bat 'mvn verify test' // não usar o clean novamente para não apagar o binário gerado anteriormente
             }
         }
         stage ('Sonar Analysis') {
