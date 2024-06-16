@@ -17,7 +17,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarQubeLocal') {
-                    bat "${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=DeployBackend -Dsonar.projectBaseDir=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_2f262d0cade01654db3f6bb2bd7e42c2cfab0bca -Dsonar.java.binaries=target -Dsonar.sources=src/main/java -Dsonar.tests=src/test/java -Dsonar.test.inclusions=src/test/java/br/ce/wcaquino/taskbackend/utils/DateUtilsTest.java -Dsonar.test.inclusions=src/test/java/br/ce/wcaquino/taskbackend/controller/TaskControllerTest.java -Dsonar.java.test.libraries=target/tasks-backend/WEB-INF/lib -Dsonar.java.coveragePlugin=jacoco -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco.exec -Dsonar.java.libraries=target/tasks-backend/WEB-INF/lib -Dsonar.qualitygate.wait=true -Dsonar.coverage.exclusions=**TaskBackendApplication.java**,**/model/**"
+                    bat "${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=DeployBackend -Dsonar.projectBaseDir=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_be8d26129472c1ae4a252e28e1b46af5154b6526 -Dsonar.java.binaries=target -Dsonar.sources=src/main/java -Dsonar.tests=src/test/java -Dsonar.test.inclusions=src/test/java/br/ce/wcaquino/taskbackend/utils/DateUtilsTest.java -Dsonar.test.inclusions=src/test/java/br/ce/wcaquino/taskbackend/controller/TaskControllerTest.java -Dsonar.java.test.libraries=target/tasks-backend/WEB-INF/lib -Dsonar.java.coveragePlugin=jacoco -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco.exec -Dsonar.java.libraries=target/tasks-backend/WEB-INF/lib -Dsonar.qualitygate.wait=true -Dsonar.coverage.exclusions=**TaskBackendApplication.java**,**/model/**"
                 }                
             }
         }
